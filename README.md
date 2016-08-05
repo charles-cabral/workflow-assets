@@ -1,2 +1,2 @@
 # workflow-assets
-Workflow
+Personal simple workflow
