@@ -1,2 +1,8 @@
-# workflow-assets
-Personal simple workflow
+#Personal simple workflow
+
+## How to use
+run:
+```
+npm install
+npm run dev
+```
