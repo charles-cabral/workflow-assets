@@ -4,6 +4,6 @@ export default function(persons) {
             <h2>${person.name}</h2>
             <p>${person.age} anos / ${person.job}</p>
         `
-    }).join('$')
+    }).join('')
     return document.body.innerHTML = person
 }

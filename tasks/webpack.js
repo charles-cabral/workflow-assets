@@ -11,7 +11,7 @@ let config = {
         path: path.resolve(__dirname, '../site')
     },
     context: path.resolve(__dirname, '../site'),
-    plugins: isProduction ? [ new webpack.optimize.UglifyJsPlugin() ] : []
+    plugins: isProduction ? [ new webpack.optimize.UglifyJsPlugin() ] : [],
 }
 
 

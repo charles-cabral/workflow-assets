@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -77,7 +77,7 @@
             <h2>${person.name}</h2>
             <p>${person.age} anos / ${person.job}</p>
         `
-    }).join('$')
+    }).join('')
     return document.body.innerHTML = person
 });
 
@@ -87,8 +87,28 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+class Person {
+    constructor(name) {
+      this.name = name;
+    }
+
+    hello() {
+      if (typeof this.name === 'string') return `Hello, I am ${this.name}!`;
+      return 'Hello!';
+    }
+}
+
+/* unused harmony default export */ var _unused_webpack_default_export = (Person);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__component__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__person__ = __webpack_require__(1);
+
 
 
 const persons = [
@@ -98,6 +118,9 @@ const persons = [
 ]
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__component__["a" /* default */])(persons)
+
+const harry = new Person('Harman Manchanda');
+console.log(harry.hello());
 
 /***/ })
 /******/ ]);
