@@ -3,8 +3,9 @@ body {
   padding: 40px;
   background-color: #e4e4e4;
   color: #6b6b6b;
-  font-family: Arial, Helvetica, sans-serif; }
-  body .cards {
+  font-family: Arial, Helvetica, sans-serif;
+
+  .cards {
     border-radius: 5px;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -13,24 +14,34 @@ body {
     grid-column-gap: 10px;
     list-style: none;
     padding: 0;
-    margin: 0; }
-    body .cards .card {
+    margin: 0;
+
+    .card {
       padding: 10px 20px;
       box-sizing: border-box;
       background-color: #fff;
       border-radius: 5px;
       margin-bottom: 10px;
-      text-align: left; }
-      body .cards .card:last-child {
+      text-align: left;
+
+      &:last-child {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         grid-template-areas: ".";
         grid-area: last;
-        margin-bottom: 0; }
-      body .cards .card h2,
-      body .cards .card p {
-        margin: 0; }
-      body .cards .card h2 {
+        margin-bottom: 0;
+      }
+
+      h2,
+      p {
+        margin: 0;
+      }
+
+      h2 {
         font-size: 1em;
-        line-height: 1em; }
+        line-height: 1em;
+      }
+    }
+  }
+}
