@@ -1,8 +1,8 @@
-# Personal simple workflow
+# Personal workflow
 
 ## How to use
 run:
 ```
 npm install
-npm run dev
+npm run start
 ```
