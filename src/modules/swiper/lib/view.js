@@ -6,8 +6,9 @@ export default function(depoiments) {
             <h3>${witness.name}</h3>
             <p>${witness.text}</p>
           </li>
-        `;
-      }).join('');
+        `
+      }).join('')
+
     return document.body.innerHTML += `
       <div class="swiper-container">
         <ul class="swiper-wrapper list-unstyled">
@@ -17,5 +18,5 @@ export default function(depoiments) {
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
       </div>
-    `;
+    `
   }
