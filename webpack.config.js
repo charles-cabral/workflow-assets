@@ -1,22 +1,16 @@
-/*
- * @title Webpack Config
- */
-
 import webpack from "webpack";
 import { paths } from "./gulp/config";
 
-var WebpackNotifierPlugin = require("webpack-notifier");
+const WebpackNotifierPlugin = require("webpack-notifier");
 
 const webpackConfig = {
   mode: process.env.NODE_ENV ? "production" : "development",
-
   entry: {
     app: paths.scripts.src
   },
   output: {
     filename: "[name].js"
   },
-
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -28,7 +22,6 @@ const webpackConfig = {
       }
     }
   },
-
   module: {
     rules: [
       {
@@ -52,9 +45,7 @@ const webpackConfig = {
       }
     ]
   },
-
   plugins: [
-    // ensure that we get a production build of any dependencies
     new webpack.DefinePlugin({
       "process.env.NODE_ENV": '"production"'
     }),
@@ -66,9 +57,9 @@ const webpackConfig = {
 
 if (process.env.NODE_ENV === "production") {
   // console.log('Welcome to production');
-  webpackConfig.devtool = "source-map";
 }
 if (process.env.NODE_ENV === "development") {
+  webpackConfig.devtool = "source-map";
   // console.log('Welcome to development');
 }
 

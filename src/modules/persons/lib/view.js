@@ -3,11 +3,11 @@ export default function(persons) {
     .map(person => {
       return `
         <li class="person">
-          <h2>${person.name}</h2>
+          <h3>${person.name}</h3>
           <p>${person.age} anos / ${person.job}</p>
         </li>
       `;
     })
     .join("");
-  return (document.body.innerHTML = `<ul class="persons">${person}</ul>`);
+  return (document.body.innerHTML += `<ul class="persons">${person}</ul>`);
 }

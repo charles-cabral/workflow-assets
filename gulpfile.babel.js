@@ -6,7 +6,7 @@ import { scripts } from "./gulp/tasks/scripts";
 import { styles } from "./gulp/tasks/styles";
 import { paths } from "./gulp/config";
 
-function watcher() {
+function bystander() {
   gulp.watch([paths.styles.watch, paths.styles.modules], styles);
   gulp.watch(
     [paths.scripts.watch, paths.scripts.modules],
@@ -19,8 +19,8 @@ export const build = series(
     parallel(styles, scripts)
 );
 
-gulp.task('clean', series(clean))
 gulp.task('build', series(build))
+gulp.task('clean', series(clean))
 
-export const dev = series(build, serve, watcher);
+export const dev = series(build, serve, bystander);
 export default dev;

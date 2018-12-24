@@ -1,6 +1,6 @@
 /*!
- * Project: Project Name
- * Author: Author Name, E-mail, Website
+ * Project: Frontlab Workflow
+ * Author: Charles Cabral, frontlab.co@gmail.com
  */
 
 /**
@@ -21,12 +21,12 @@
  *     Shame..............All the CSS declarations, hacks and things we are not proud of.
  */
 
-@import 'settings/**/*.scss';
-@import 'tools/**/*.scss';
-@import 'generic/**/*.scss';
-@import 'elements/**/*.scss';
-@import 'objects/**/*.scss';
-@import 'components/**/*.scss';
-@import 'utilities/**/*.scss';
-@import '../modules/**/*.scss';
-@import 'shame';
+@import './settings/**/*.scss';
+@import './tools/**/*.scss';
+@import './generic/**/*.scss';
+@import './elements/**/*.scss';
+@import './objects/**/*.scss';
+@import './components/**/*.scss';
+@import './utilities/**/*.scss';
+@import './../modules/**/*.scss';
+@import './shame';
