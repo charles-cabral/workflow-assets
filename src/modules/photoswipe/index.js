@@ -1,8 +1,10 @@
-import renderContainer from './js/Html';
-import Pswp from './js/Pswp';
+import renderUI from './js/UI'
+import Pswp from './js/Pswp'
+import Gallery from './js/Example'
 
 export default function() {
-  renderContainer()
+  Gallery(6)
+  renderUI()
   const galeria = new Pswp('.gallery')
   return galeria.start()
 }

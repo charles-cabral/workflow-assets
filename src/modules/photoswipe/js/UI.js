@@ -10,10 +10,9 @@ const wrapper = `
       <div class="pswp__ui pswp__ui--hidden">
         <div class="pswp__top-bar">
           <div class="pswp__counter"></div>
-          <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-          <button class="pswp__button pswp__button--share" title="Share"></button>
-          <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-          <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+          <button class="pswp__button pswp__button--close" title="Fechar"></button>
+          <button class="pswp__button pswp__button--fs" title="Fullscreen"></button>
+          <button class="pswp__button pswp__button--zoom" title="Ampliar"></button>
           <div class="pswp__preloader">
             <div class="pswp__preloader__icn">
               <div class="pswp__preloader__cut">
@@ -25,8 +24,8 @@ const wrapper = `
         <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
           <div class="pswp__share-tooltip"></div>
         </div>
-        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
-        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+        <button class="pswp__button pswp__button--arrow--left" title="Anterior"></button>
+        <button class="pswp__button pswp__button--arrow--right" title="Próximo"></button>
         <div class="pswp__caption">
           <div class="pswp__caption__center"></div>
         </div>

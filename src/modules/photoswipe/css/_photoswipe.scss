@@ -1,23 +1,26 @@
-$pswp__show-hide-transition-duration: 333ms !default;
-$pswp__controls-transition-duration: 333ms !default;
-$pswp__background-color: #000 !default;
-$pswp__placeholder-color: #222 !default;
-$pswp__box-sizing-border-box: true !default;
-$pswp__root-z-index: 1500 !default;
 $pswp__assets-path: '../img/vendor/' !default;
-$pswp__error-text-color: #ccc !default;
 $pswp__include-minimal-style: true !default;
 
 @import "photoswipe/src/css/main";
-@import "photoswipe/src/css/default-skin/default-skin";
+@import "./skin/light";
 
 
 .gallery {
-    margin-bottom: $headings-margin-bottom;
+    margin-bottom: 20px;
     .slide {
-        img {
-            width: 100%;
-            height: auto;
+        .link {
+            display: block;
+            transition: opacity 300ms ease-in-out;
+
+            &:hover {
+                opacity: .8
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+            }
         }
     }
 }

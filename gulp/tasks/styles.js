@@ -22,7 +22,11 @@ export function scss() {
         outputStyle: 'compressed'
       })
     )
-    .pipe(postcss([autoprefixer({ browsers: "last 2 versions" })]))
+    .pipe(postcss([
+      autoprefixer({
+        browsers: ['> 1%', 'Last 4 versions', 'iOS 8']
+      })
+    ]))
     .pipe(gulpif(!isProd, sourcemaps.write(".")))
     .pipe(dest(paths.styles.dest))
     .pipe(browserSync.stream());
