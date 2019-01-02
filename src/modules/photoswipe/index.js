@@ -1,8 +1,8 @@
-import wrapper from './js/wrapper';
+import renderContainer from './js/Html';
 import Pswp from './js/Pswp';
 
 export default function() {
-  wrapper()
+  renderContainer()
   const galeria = new Pswp('.gallery')
   return galeria.start()
 }
