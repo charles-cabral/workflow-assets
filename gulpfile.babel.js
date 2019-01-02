@@ -4,6 +4,7 @@ import { reload, serve } from "./gulp/tasks/server";
 import { clean } from "./gulp/tasks/clean";
 import { scripts } from "./gulp/tasks/scripts";
 import { styles } from "./gulp/tasks/styles";
+import { imagesTheme, imagesVendor } from "./gulp/tasks/images";
 import { paths } from "./gulp/config";
 
 function bystander() {
@@ -16,7 +17,7 @@ function bystander() {
 
 export const build = series(
     clean,
-    parallel(styles, scripts)
+    parallel(imagesTheme, imagesVendor, styles, scripts)
 );
 
 gulp.task('build', series(build))

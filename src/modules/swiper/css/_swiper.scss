@@ -1,0 +1,21 @@
+@import "swiper/dist/css/swiper";
+
+.swiper-container {
+    height: auto;
+    text-align: center;
+    margin: 0 0 $grid-gutter-width;
+
+    .swiper-wrapper {
+        margin: 0
+    }
+
+    .swiper-slide {
+        margin: 0;
+
+        .content {
+            background-color: lighten($body-color, 70);
+            border-radius: 5px;
+            height: 300px;
+        }
+    }
+}

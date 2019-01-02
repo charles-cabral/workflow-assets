@@ -1,9 +1,12 @@
 import CardsPersons from "../modules/persons"
-import swiperDepoiments from "../modules/swiper"
+import SwiperDepoiments from "../modules/swiper"
+import Photoswipe from "../modules/photoswipe"
+
+SwiperDepoiments()
 
 document.addEventListener('DOMContentLoaded', function() {
-  swiperDepoiments()
   CardsPersons()
+  Photoswipe()
 })
 
 

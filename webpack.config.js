@@ -1,7 +1,7 @@
-import webpack from "webpack";
-import { paths } from "./gulp/config";
-
-const WebpackNotifierPlugin = require("webpack-notifier");
+import webpack from 'webpack'
+import MinifyPlugin from 'babel-minify-webpack-plugin'
+import { paths } from './gulp/config'
+import WebpackNotifierPlugin from 'webpack-notifier'
 
 const webpackConfig = {
   mode: process.env.NODE_ENV ? "production" : "development",
@@ -12,6 +12,7 @@ const webpackConfig = {
     filename: "[name].js"
   },
   optimization: {
+    minimize: false,
     splitChunks: {
       cacheGroups: {
         commons: {
@@ -51,8 +52,17 @@ const webpackConfig = {
     }),
     new WebpackNotifierPlugin({
       skipFirstNotification: true
-    })
-  ]
+    }),
+    new MinifyPlugin({},{
+        comments: false
+    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery'
+    // })
+  ],
+  performance: {
+    hints: false
+  }
 };
 
 if (process.env.NODE_ENV === "production") {
@@ -60,7 +70,6 @@ if (process.env.NODE_ENV === "production") {
 }
 if (process.env.NODE_ENV === "development") {
   webpackConfig.devtool = "source-map";
-  // console.log('Welcome to development');
 }
 
 module.exports = webpackConfig;

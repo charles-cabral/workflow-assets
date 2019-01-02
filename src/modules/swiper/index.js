@@ -9,8 +9,10 @@ export default function() {
 
     renderDepoiments(depoiments)
 
-		new Swiper('.swiper-container', {
-      spaceBetween: 30,
+		// eslint-disable-next-line no-unused-vars
+		const swiperDepoiments = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 20,
       centeredSlides: true,
       autoplay: {
         delay: 2500,

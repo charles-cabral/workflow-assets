@@ -14,7 +14,12 @@ export const paths = {
     watch: 'src/scripts/**/*.js',
     modules: 'src/modules/**/*.js',
     dest: 'assets/js',
-  }
+  },
+  images: {
+    src: 'src/images/img/**/*',
+    modules: 'src/modules/**/*.+(gif|png|jpe?g|svg)',
+    dest: 'assets/img'
+  },
 };
 
 export const isProd = process.env.NODE_ENV === 'production';
