@@ -1,14 +1,13 @@
 import $ from 'jquery'
 import Swiper from 'swiper'
-import depoiments from './lib/model'
-import renderDepoiments from './lib/view'
+import depoiments from './js/Data'
+import renderDepoiments from './js/Ui'
 
 export default function() {
 
+  renderDepoiments(depoiments)
+
 	$(document).ready(function () {
-
-    renderDepoiments(depoiments)
-
 		// eslint-disable-next-line no-unused-vars
 		const swiperDepoiments = new Swiper('.swiper-container', {
       slidesPerView: 3,

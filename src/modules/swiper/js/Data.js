@@ -8,6 +8,6 @@ const depoiments = [
   { name: "Hannah", text: depoiment },
   { name: "Jada", text: depoiment },
   { name: "Sophie", text: depoiment }
-];
+]
 
 export default depoiments;
