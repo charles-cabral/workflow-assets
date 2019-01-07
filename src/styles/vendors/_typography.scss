@@ -1,0 +1,4 @@
+
+@include font-face($font-heading-name, $font-path+$font-heading-file, bold, normal);
+
+@include font-face($font-banner-name, $font-path+$font-banner-file, bold, normal);

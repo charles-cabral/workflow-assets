@@ -1,4 +1,4 @@
-import browserSync from "browser-sync";
+import browserSync from 'browser-sync'
 
 export function serve(cb) {
   browserSync.init({

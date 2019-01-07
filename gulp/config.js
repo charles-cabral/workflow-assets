@@ -1,4 +1,5 @@
 export const paths = {
+  root: './',
   src: './src',
   dest: './assets',
   deploy: './assets/**/*',
@@ -20,6 +21,10 @@ export const paths = {
     modules: 'src/modules/**/*.+(gif|png|jpe?g|svg)',
     dest: 'assets/img'
   },
-};
+  fonts: {
+    src: 'src/fonts',
+    dest: 'assets/font'
+  }
+}
 
 export const isProd = process.env.NODE_ENV === 'production';

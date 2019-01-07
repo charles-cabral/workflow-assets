@@ -1,6 +1,6 @@
-import notifier from "node-notifier";
+import notifier from 'node-notifier';
 
-function errorHandler(error) {
+function message(error) {
   notifier.notify({
     title: 'Gulp Error',
     message: error.message,
@@ -11,4 +11,4 @@ function errorHandler(error) {
   this.emit('end');
 }
 
-export default errorHandler;
+export default message;

@@ -1,7 +1,7 @@
 export default function(size) {
   let items = []
 
-  for (let i = 0; i < size; i++) {
+  for (let i=0; i<size; i++) {
     items += `
       <figure class="slide col">
         <a  class="link"

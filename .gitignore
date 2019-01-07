@@ -3,6 +3,7 @@ node_modules
 bower_components
 dist
 assets
+src/fonts/css
 
 # Optional npm cache directory
 .npm
