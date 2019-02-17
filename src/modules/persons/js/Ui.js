@@ -1,6 +1,5 @@
 export default function(persons) {
-  const person = persons
-    .map(person => {
+  const person = persons.map(person => {
       return `
         <li class="person col-md-4">
           <div class="content">

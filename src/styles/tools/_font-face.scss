@@ -1,15 +1,15 @@
 /* stylelint-disable */
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff ttf svg) {
 	$src: null;
 
 	$extmods: (
-    eot: "?",
-    svg: "#" + str-replace($name, " ", "_")
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
 	);
 
 	$formats: (
-    otf: "opentype",
-    ttf: "truetype"
+		otf: "opentype",
+		ttf: "truetype"
 	);
 
 	@each $ext in $exts {

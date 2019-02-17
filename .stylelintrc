@@ -15,12 +15,12 @@
     "block-no-empty": null,
     "block-opening-brace-space-before": null,
     "declaration-empty-line-before": null,
-    "max-empty-lines": 2,
+    "max-empty-lines": null,
     "number-leading-zero": "never",
     "no-descending-specificity": null,
     "rule-empty-line-before": null,
     "selector-list-comma-newline-after": null,
-    "selector-pseudo-element-colon-notation": null
+    "selector-pseudo-element-colon-notation": null,
   }
 }
 

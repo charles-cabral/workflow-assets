@@ -56,9 +56,9 @@ const webpackConfig = {
     new MinifyPlugin({},{
         comments: false
     }),
-    // new webpack.ProvidePlugin({
-    //   $: 'jquery'
-    // })
+    new webpack.ProvidePlugin({
+      $: 'jquery'
+    })
   ],
   performance: {
     hints: false
