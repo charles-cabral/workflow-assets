@@ -1,40 +1,38 @@
 export const base = {
-  dest: './client/public/www',
+  root: './',
+  src: './src',
+  dest: './www',
   host: 'localhost',
   port: 9000
 }
 
-export const paths = {
-  root: './',
-  src: './src',
-  dest: `${base.dest}/`,
-  deploy: `${base.dest}/assets/**/*`,
+export const path = {
   styles: {
-    src: 'src/styles/main.scss',
-    watch: 'src/styles/**/*.scss',
-    modules: 'src/modules/**/*.scss',
+    src: `${base.src}/styles/main.scss`,
+    watch: `${base.src}/styles/**/*.scss`,
+    modules: `${base.src}/modules/**/*.scss`,
     dest: `${base.dest}/assets/css`,
-    lint: 'src/styles/**/*.s+(a|c)ss'
+    lint: `${base.src}/styles/**/*.s+(a|c)ss`
   },
   scripts: {
-    src: './src/scripts/app.js',
-    watch: 'src/scripts/**/*.js',
-    modules: 'src/modules/**/*.js',
-    dest: `${base.dest}/assets/js`,
+    src: `${base.src}/scripts/app.js`,
+    watch: `${base.src}/scripts/**/*.js`,
+    modules: `${base.src}/modules/**/*.js`,
+    dest: `${base.dest}/assets/js/`,
   },
   images: {
-    src: 'src/images/img/**/*',
-    modules: 'src/modules/**/*.+(gif|png|jpe?g|svg)',
-    dest: `${base.dest}/assets/img`
+    src: `${base.src}/images/img/**/*`,
+    modules: `${base.src}/modules/**/*.+(gif|png|jpe?g|svg)`,
+    dest: `${base.dest}/assets/img/`
   },
   fonts: {
-    src: 'src/fonts',
-    dest: `${base.dest}/assets/font`
+    src: `${base.src}/fonts/`,
+    dest: `${base.dest}/assets/font/`
   },
   harp: {
-    src: './client/public',
-    watch: `./client/public/**/*.+(ejs|jade|md|json)`
+    src: './public',
+    watch: `./public/**/*.+(ejs|jade|md|json)`
   }
 }
 
-export const isProd = process.env.NODE_ENV === 'production';
+export const isProd = process.env.NODE_ENV === `production`;

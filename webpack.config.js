@@ -1,12 +1,12 @@
 import webpack from 'webpack'
 import MinifyPlugin from 'babel-minify-webpack-plugin'
-import { paths } from './gulp/config'
+import { path } from './gulp/config'
 import WebpackNotifierPlugin from 'webpack-notifier'
 
 const webpackConfig = {
   mode: process.env.NODE_ENV ? "production" : "development",
   entry: {
-    app: paths.scripts.src
+    app: path.scripts.src
   },
   output: {
     filename: "[name].js"

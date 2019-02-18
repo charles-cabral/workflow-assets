@@ -4,18 +4,18 @@ import webpack from 'webpack'
 import gulpWebpack from 'webpack-stream'
 import gulpEslint from 'gulp-eslint'
 import plumber from 'gulp-plumber'
-import message from '../utils/notify.js'
-import { paths, isProd } from './../config'
+import message from './../utils/notify.js'
+import { path, isProd } from './../config'
 
 export function esTranspile() {
-  return src(paths.scripts.src)
+  return src(path.scripts.src)
     .pipe(plumber({ message }))
     .pipe(gulpWebpack(require('./../../webpack.config.js'), webpack))
-    .pipe(dest(paths.scripts.dest));
+    .pipe(dest(path.scripts.dest));
 }
 
 export function esLint() {
-  return src(paths.scripts.src)
+  return src(path.scripts.src)
     .pipe(gulpEslint())
     .pipe(gulpEslint.format())
     .pipe(gulpif(isProd, gulpEslint.failAfterError()));

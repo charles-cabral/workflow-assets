@@ -1,15 +1,14 @@
 import browserSync from 'browser-sync'
-import { base } from './../config'
+import { base } from './../../config'
 
 export function serve(cb) {
-  // console.log('teste', base.dest+'/')
   browserSync.init({
-    server: {
-      baseDir: base.dest+'/'
-    }
+    server: { baseDir: base.root }
+    // proxy: 'localhost:8888',
   })
   cb()
 }
+
 
 export function reload(cb) {
   browserSync.reload()

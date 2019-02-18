@@ -1,4 +1,4 @@
-import { paths } from './../config'
+import { path } from './../config'
 import message from './../utils/notify.js'
 import { src, dest, series } from 'gulp'
 import del from 'del'
@@ -7,23 +7,23 @@ import plumber from 'gulp-plumber'
 import fontmin from 'gulp-fontmin'
 
 export function minifyFont() {
-  return src(`${paths.fonts.src}/**/*.ttf`)
+  return src(`${path.fonts.src}**/*.ttf`)
     .pipe(plumber({message}))
     .pipe(fontmin())
-    .pipe(dest(paths.fonts.dest))
+    .pipe(dest(path.fonts.dest))
 }
 
 export function handleCss() {
-  return src(`${paths.fonts.dest}/*.css`)
+  return src(`${path.fonts.dest}*.css`)
     .pipe(rename({
       dirname: 'css'
     }))
-    .pipe(dest(paths.fonts.src))
+    .pipe(dest(path.fonts.src))
 }
 
 
 export function deleteCss() {
-  return del([`${paths.fonts.dest}/*.css`])
+  return del([`${path.fonts.dest}*.css`])
 }
 
 export const fonts = series( minifyFont, handleCss, deleteCss )

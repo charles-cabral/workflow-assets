@@ -1,6 +1,6 @@
 import { src, dest, series } from 'gulp'
 import message from './../utils/notify'
-import { paths, isProd } from './../config'
+import { path, isProd } from './../config'
 import gulpif from 'gulp-if'
 import plumber from 'gulp-plumber'
 import sass from 'gulp-sass'
@@ -12,7 +12,7 @@ import stylelint from 'gulp-stylelint'
 import browserSync from 'browser-sync'
 
 export function scss() {
-  return src(paths.styles.src)
+  return src(path.styles.src)
     .pipe(plumber({ message }))
     .pipe(gulpif(!isProd, sourcemaps.init()))
     .pipe(sassGlob())
@@ -34,12 +34,12 @@ export function scss() {
       })
     ]))
     .pipe(gulpif(!isProd, sourcemaps.write(".")))
-    .pipe(dest(paths.styles.dest))
+    .pipe(dest(path.styles.dest))
     .pipe(browserSync.stream());
 }
 
 export function lint() {
-  return src(paths.styles.watch).pipe(
+  return src(path.styles.watch).pipe(
     stylelint({
       failAfterError: isProd,
       reporters: [{
