@@ -1,0 +1,14 @@
+
+<% for(slug in public.articles._data) { %>
+  <% article = public.articles._data[slug] %>
+    <% if(article.published !== false || environment=='development') { %>
+      <% var classes = article.published == false ? 'unpublished' : '' %>
+      <a href="/articles/<%- slug %>" class="article-link <%- classes %>">
+          <h3><%- article.title %></h3>
+          <pre><%- article.date %></pre>
+          <% if(typeof article.tagline != "undefined") { %>
+            <p><%- article.tagline %></p>
+          <% } %>
+      </a>
+    <% } %>
+<% } %>

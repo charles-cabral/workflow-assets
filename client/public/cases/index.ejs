@@ -1,0 +1,13 @@
+
+<% for(slug in public.cases._data) { %>
+  <% article = public.cases._data[slug] %>
+    <% if(article.published !== false || environment=='development') { %>
+      <% var classes = article.published == false ? 'unpublished' : '' %>
+      <a href="/cases/<%- slug %>" class="article-link <%- classes %>">
+          <h3><%- article.title %></h3>
+          <% if(typeof article.tagline != "undefined") { %>
+            <p><%- article.tagline %></p>
+          <% } %>
+      </a>
+    <% } %>
+<% } %>

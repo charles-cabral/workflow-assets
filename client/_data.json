@@ -1,0 +1,16 @@
+{
+  "index": {
+    "layout": "_layout-home",
+    "title": "Home",
+    "slug": "",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
+  },
+  "articles": {
+    "title": "Articles",
+    "slug": "articles/"
+  },
+  "cases": {
+    "title": "Cases",
+    "slug": "cases/"
+  }
+}
