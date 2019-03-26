@@ -28,10 +28,6 @@ export const path = {
   fonts: {
     src: `${base.src}/fonts/`,
     dest: `${base.dest}/assets/font/`
-  },
-  harp: {
-    src: './public',
-    watch: `./public/**/*.+(ejs|jade|md|json)`
   }
 }
 

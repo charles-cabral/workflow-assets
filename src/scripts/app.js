@@ -12,7 +12,7 @@ const str = SingleLine`
 console.log('SingleLine: ', str)
 
 document.addEventListener('DOMContentLoaded', function() {
-  Tips()
+  // Tips()
   SwiperDepoiments()
   CardsPersons()
   Photoswipe()
