@@ -9,10 +9,10 @@ const str = SingleLine`
     <div class="content">String</div>
   </li>
 `
-console.log('SingleLine: ', str)
+console.log( 'SingleLine: ', str )
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Tips()
+  Tips()
   SwiperDepoiments()
   CardsPersons()
   Photoswipe()
