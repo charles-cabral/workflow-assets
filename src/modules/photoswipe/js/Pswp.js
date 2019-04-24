@@ -1,6 +1,6 @@
 import $ from 'jquery'
 import PhotoSwipe from 'photoswipe'
-import UIDefault from 'photoswipe/dist/photoswipe-ui-default';
+import UIDefault from 'photoswipe/dist/photoswipe-ui-default'
 
 class Pswp {
 

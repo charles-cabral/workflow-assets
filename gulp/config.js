@@ -21,8 +21,9 @@ export const path = {
     dest: `${base.dest}/assets/js/`,
   },
   images: {
-    src: `${base.src}/images/img/**/*`,
+    src: `${base.src}/images/figures/**/*`,
     modules: `${base.src}/modules/**/*.+(gif|png|jpe?g|svg)`,
+    icons: `${base.src}/images/icons/*.svg`,
     dest: `${base.dest}/assets/img/`
   },
   fonts: {
