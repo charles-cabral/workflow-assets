@@ -20,9 +20,14 @@ function bystander() {
   )
 }
 
+export const stylePrepare = series(
+  styles,
+  parallel(icons)
+)
+
 export const build = series(
   clean,
-  parallel(fonts, images, icons, styles, scripts)
+  parallel(fonts, images, stylePrepare, scripts)
 )
 
 gulp.task('build', series(build))

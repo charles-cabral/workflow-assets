@@ -1,0 +1,74 @@
+@font-face {
+	font-family: "layout-icons";
+	src: url('./../font/layout-icons.eot');
+	src: url('./../font/layout-icons.eot?#iefix') format('eot'),
+		url('./../font/layout-icons.woff2') format('woff2'),
+		url('./../font/layout-icons.woff') format('woff'),
+		url('./../font/layout-icons.ttf') format('truetype'),
+		url('./../font/layout-icons.svg#layout-icons') format('svg');
+}
+
+@mixin icon-styles {
+	font-family: "layout-icons";
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: normal;
+	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
+	text-decoration: none;
+	text-transform: none;
+}
+
+%icon {
+	@include icon-styles;
+}
+
+@function icon-char($filename) {
+	$char: "";
+
+	@if $filename == uEA01-castor {
+		$char: "\E001";
+	}
+	@if $filename == uEA02-cobra {
+		$char: "\E002";
+	}
+	@if $filename == uEA03-duck {
+		$char: "\E003";
+	}
+	@if $filename == uEA04-pig {
+		$char: "\E004";
+	}
+	@if $filename == uEA05-seacow {
+		$char: "\E005";
+	}
+
+	@return $char;
+}
+
+@mixin icon($filename, $insert: before, $extend: true) {
+	&:#{$insert} {
+		@if $extend {
+			@extend %icon;
+		} @else {
+			@include icon-styles;
+		}
+		content: icon-char($filename);
+	}
+}
+
+.icon-uEA01-castor {
+	@include icon(uEA01-castor);
+}
+.icon-uEA02-cobra {
+	@include icon(uEA02-cobra);
+}
+.icon-uEA03-duck {
+	@include icon(uEA03-duck);
+}
+.icon-uEA04-pig {
+	@include icon(uEA04-pig);
+}
+.icon-uEA05-seacow {
+	@include icon(uEA05-seacow);
+}

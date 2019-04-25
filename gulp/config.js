@@ -3,7 +3,10 @@ export const base = {
   src: './src',
   dest: './www',
   host: 'localhost',
-  port: 9000
+  port: 9000,
+  fonticon: {
+    name: 'layout-icons'
+  }
 }
 
 export const path = {
@@ -23,7 +26,10 @@ export const path = {
   images: {
     src: `${base.src}/images/figures/**/*`,
     modules: `${base.src}/modules/**/*.+(gif|png|jpe?g|svg)`,
-    icons: `${base.src}/images/icons/*.svg`,
+    icons: {
+      svg: `${base.src}/images/icons/*.svg`,
+      scss: `${base.src}/styles/tools`
+    },
     dest: `${base.dest}/assets/img/`
   },
   fonts: {

@@ -1,23 +1,38 @@
-import { path } from '../config'
+import { base, path } from '../config'
 import message from '../utils/notify'
 import { src, dest, series } from 'gulp'
 import plumber from 'gulp-plumber'
 import imagemin from 'gulp-imagemin'
 import iconfont from 'gulp-iconfont'
+import iconfontCss from 'gulp-iconfont-css'
 
 export function createFontIcon() {
-  return src([path.images.icons])
+  return src(path.images.icons.svg)
     .pipe(plumber({ message }))
     .pipe(imagemin())
     .pipe(iconfont({
-      fontName: 'layout-icons',
+      fontName: base.fonticon.name,
       prependUnicode: false,
       formats: ['ttf', 'eot', 'woff', 'svg']
     }))
-    .on('glyphs', function(glyphs, options) {
-      console.log(glyphs, options);
-    })
     .pipe(dest(path.fonts.dest));
 }
 
-export const icons = series(createFontIcon)
+export function createFontIconSass() {
+  return src(path.images.icons.svg)
+    .pipe(plumber({ message }))
+    .pipe(iconfontCss({
+      fontName: base.fonticon.name,
+      path: 'scss',
+      targetPath: `_fonticons.scss`,
+      fontPath: './../font/'
+    }))
+    .pipe(dest(path.images.icons.scss));
+}
+
+export function streamFonticon(done) {
+  createFontIconSass()
+  done()
+}
+
+export const icons = series( createFontIcon, streamFonticon )
