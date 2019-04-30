@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+@include font-face(
+  '<%= fontName %>',
+  $font-path+'<%= fontName %>',
+  normal,
+  normal
+);
+
+.<%= cssClass %>{
+  font-family: "<%= fontName %>";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-variant: normal;
+	text-decoration: none;
+  text-transform: none;
+  text-rendering: auto;
+  display: inline-block;
+  line-height: 3rem;
+  font-size: 3em;
+  font-style: normal;
+  <% _.each(glyphs, function(glyph) { %>
+    &.-<%= glyph.fileName %>:before {
+      content: "\<%= glyph.codePoint %>";
+    }
+  <% }); %>
+}

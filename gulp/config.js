@@ -5,7 +5,9 @@ export const base = {
   host: 'localhost',
   port: 9000,
   fonticon: {
-    name: 'layout-icons'
+    name: 'Frontlab_Icons',
+    copyright: 'Frontlab BR',
+    fontId: 'workflow-project'
   }
 }
 

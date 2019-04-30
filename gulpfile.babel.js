@@ -31,8 +31,8 @@ export const build = series(
 )
 
 gulp.task('build', series(build))
-gulp.task('clean', series(clean))
 gulp.task('icons', series(icons))
+gulp.task('clean', series(clean))
 
 export const dev = series(build, serve, bystander)
 

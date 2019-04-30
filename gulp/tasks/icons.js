@@ -1,6 +1,7 @@
 import { base, path } from '../config'
+import { cleanSvg } from './clean'
 import message from '../utils/notify'
-import { src, dest, series } from 'gulp'
+import { src, dest, parallel } from 'gulp'
 import plumber from 'gulp-plumber'
 import imagemin from 'gulp-imagemin'
 import iconfont from 'gulp-iconfont'
@@ -13,8 +14,14 @@ export function createFontIcon() {
     .pipe(iconfont({
       fontName: base.fonticon.name,
       prependUnicode: false,
+      copyright: base.fonticon.copyright,
       formats: ['ttf', 'eot', 'woff', 'svg']
     }))
+    .on('glyphs', function(glyphs, options) {
+      // CSS templating, e.g.
+      console.log(glyphs, options);
+    })
+    .on('end', () => setTimeout( () => cleanSvg(), 600 ) )
     .pipe(dest(path.fonts.dest));
 }
 
@@ -23,16 +30,13 @@ export function createFontIconSass() {
     .pipe(plumber({ message }))
     .pipe(iconfontCss({
       fontName: base.fonticon.name,
-      path: 'scss',
-      targetPath: `_fonticons.scss`,
-      fontPath: './../font/'
+      path: 'gulp/templates/scss/icons.scss',
+      targetPath: '_fonticons.scss',
+      fontPath: './../font/',
+      firstGlyph: 0xEa01
     }))
     .pipe(dest(path.images.icons.scss));
 }
 
-export function streamFonticon(done) {
-  createFontIconSass()
-  done()
-}
 
-export const icons = series( createFontIcon, streamFonticon )
+export const icons = parallel(createFontIcon, createFontIconSass)

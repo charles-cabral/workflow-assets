@@ -1,7 +1,7 @@
 import { path } from './../config'
 import message from './../utils/notify.js'
 import { src, dest, series } from 'gulp'
-import del from 'del'
+import { cleanCss } from './clean'
 import rename from 'gulp-rename'
 import plumber from 'gulp-plumber'
 import fontmin from 'gulp-fontmin'
@@ -19,11 +19,7 @@ export function handleCss() {
       dirname: 'css'
     }))
     .pipe(dest(path.fonts.src))
+    .on('end', () => cleanCss())
 }
 
-
-export function deleteCss() {
-  return del([`${path.fonts.dest}*.css`])
-}
-
-export const fonts = series( minifyFont, handleCss, deleteCss )
+export const fonts = series(minifyFont, handleCss)

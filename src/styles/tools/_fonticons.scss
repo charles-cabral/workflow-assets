@@ -1,74 +1,87 @@
-@font-face {
-	font-family: "layout-icons";
-	src: url('./../font/layout-icons.eot');
-	src: url('./../font/layout-icons.eot?#iefix') format('eot'),
-		url('./../font/layout-icons.woff2') format('woff2'),
-		url('./../font/layout-icons.woff') format('woff'),
-		url('./../font/layout-icons.ttf') format('truetype'),
-		url('./../font/layout-icons.svg#layout-icons') format('svg');
-}
+@charset "utf-8";
 
-@mixin icon-styles {
-	font-family: "layout-icons";
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
+@include font-face(
+  'Frontlab_Icons',
+  $font-path+'Frontlab_Icons',
+  normal,
+  normal
+);
+
+.icon{
+  font-family: "Frontlab_Icons";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-variant: normal;
-	font-weight: normal;
-	// speak: none; // only necessary if not using the private unicode range (firstGlyph option)
 	text-decoration: none;
-	text-transform: none;
-}
-
-%icon {
-	@include icon-styles;
-}
-
-@function icon-char($filename) {
-	$char: "";
-
-	@if $filename == uEA01-castor {
-		$char: "\E001";
-	}
-	@if $filename == uEA02-cobra {
-		$char: "\E002";
-	}
-	@if $filename == uEA03-duck {
-		$char: "\E003";
-	}
-	@if $filename == uEA04-pig {
-		$char: "\E004";
-	}
-	@if $filename == uEA05-seacow {
-		$char: "\E005";
-	}
-
-	@return $char;
-}
-
-@mixin icon($filename, $insert: before, $extend: true) {
-	&:#{$insert} {
-		@if $extend {
-			@extend %icon;
-		} @else {
-			@include icon-styles;
-		}
-		content: icon-char($filename);
-	}
-}
-
-.icon-uEA01-castor {
-	@include icon(uEA01-castor);
-}
-.icon-uEA02-cobra {
-	@include icon(uEA02-cobra);
-}
-.icon-uEA03-duck {
-	@include icon(uEA03-duck);
-}
-.icon-uEA04-pig {
-	@include icon(uEA04-pig);
-}
-.icon-uEA05-seacow {
-	@include icon(uEA05-seacow);
+  text-transform: none;
+  text-rendering: auto;
+  display: inline-block;
+  line-height: 3rem;
+  font-size: 3em;
+  font-style: normal;
+  
+    &.-bear:before {
+      content: "\EA01";
+    }
+  
+    &.-castor:before {
+      content: "\EA02";
+    }
+  
+    &.-cobra:before {
+      content: "\EA03";
+    }
+  
+    &.-cow:before {
+      content: "\EA04";
+    }
+  
+    &.-duck:before {
+      content: "\EA05";
+    }
+  
+    &.-elephant:before {
+      content: "\EA06";
+    }
+  
+    &.-giraffe:before {
+      content: "\EA07";
+    }
+  
+    &.-goat:before {
+      content: "\EA08";
+    }
+  
+    &.-insect:before {
+      content: "\EA09";
+    }
+  
+    &.-mouse:before {
+      content: "\EA0A";
+    }
+  
+    &.-panda:before {
+      content: "\EA0B";
+    }
+  
+    &.-pig:before {
+      content: "\EA0C";
+    }
+  
+    &.-seacow:before {
+      content: "\EA0D";
+    }
+  
+    &.-shark:before {
+      content: "\EA0E";
+    }
+  
+    &.-sheep:before {
+      content: "\EA0F";
+    }
+  
+    &.-toad:before {
+      content: "\EA10";
+    }
+  
 }
