@@ -17,10 +17,6 @@ export function createFontIcon() {
       copyright: base.fonticon.copyright,
       formats: ['ttf', 'eot', 'woff', 'svg']
     }))
-    .on('glyphs', function(glyphs, options) {
-      // CSS templating, e.g.
-      console.log(glyphs, options);
-    })
     .on('end', () => setTimeout( () => cleanSvg(), 600 ) )
     .pipe(dest(path.fonts.dest));
 }

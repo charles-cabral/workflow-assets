@@ -15,7 +15,6 @@ export function imagesVendor() {
     .pipe(dest(path.images.dest));
 }
 
-
 export function imagesTheme() {
   return src(path.images.src)
     .pipe(plumber({ message }))

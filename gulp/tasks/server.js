@@ -3,7 +3,9 @@ import { base } from './../config'
 
 export function serve(cb) {
   browserSync.init({
-    server: { baseDir: base.root }
+    server: {
+      baseDir: base.root
+    }
   })
   cb()
 }
